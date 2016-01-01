@@ -1,7 +1,13 @@
 ## Excercise ##
 
 
+
 ## Exercise 1: Write a program using a for statement to compute the 1-norm of a given vector v ∈ R n . Apply the program to an example vector as Apply the program to an example vector as onenorm_for(matrix(c(4,5,4,3,-1,3,4,5,-4,2),ncol=1)) ###
+=======
+## Exercise 1: Write a program using a for statement to compute the 1-norm of a given 
+vector v ∈ R n . Apply the program to an example vector as Apply the program 
+to an example vector as onenorm_for(matrix(c(4,5,4,3,-1,3,4,5,-4,2),ncol=1)) ###
+>>>>>>> 0bd7cbaae6ca96fb938d21a5574fcd2cb2d6480a
 
 
 ## SOLUTION: ##
@@ -15,6 +21,7 @@ onenorm_for<- function(v){
 }
 
 onenorm_for(matrix(c(4,5,4,3,-1,3,4,5,-4,2),ncol=1))
+
 
 
 
