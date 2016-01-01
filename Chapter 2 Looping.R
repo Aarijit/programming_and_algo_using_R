@@ -38,3 +38,20 @@ numberoftermsingeo(0.5,0.01)
 
 ## SOLUTION: ##
 
+numberoftermsingeo <- function(x,desirederror){
+  refvalue = 1/(1-x)
+  term =1
+  sumvalue = x^(term-1)
+  if ( x > 1){
+    return(print("The Series will not Converge"))
+  }
+  else if ( x < 1) {
+    while (abs((refvalue-sumvalue)/refvalue)>desirederror){
+      term=term+1
+      sumvalue=sumvalue+x^(term-1)
+  }
+  
+  }
+  return(term)
+}
+numberoftermsingeo(1.1,0.01)
