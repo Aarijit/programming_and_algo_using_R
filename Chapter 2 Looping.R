@@ -243,4 +243,39 @@ numberoftermsingeo(1.1,0.01)
 
 ## SOLUTION ##
 
+twoNorm<-function(v){
+  sum_prod=0
+  for(i in 1:length(v)){
+    sum_prod=sum_prod+(v[i])^2
+  }
+  return((sum_prod)^1/2)
+}
+
+twoNorm(matrix(c(5,4,1,6,7,8,-4,15,-2,4),ncol=1))
+
+
+norm(matrix(c(5,4,1,6,7,8,-4,15,-2,4),ncol=1),"E")
+
+
+## EXERCISE 4 ##
+
+## Write a program that calculates the sum of cubes of positive integers from 1 to n for a given value of n ##
+
+## SOLUTION ##
+
+sumOfCubes<- function(n){
+  sumValue=0
+  for ( i in 1 : n){
+    sumValue=sumValue+i^3
+    
+  }
+  return(sumValue)
+}
+
+sumOfCubes(10)
+
+((10*(10+1))/2)^2
+
+
+
 
