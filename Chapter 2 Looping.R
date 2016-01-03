@@ -277,5 +277,21 @@ sumOfCubes(10)
 ((10*(10+1))/2)^2
 
 
+## EXERCISE 5 ##
+
+## Write an R program that counts the number of zeros of a given vector v ∈ R n .##
 
 
+## SOLUTION ##
+
+countZeros<-function(v){
+  n=length(v)
+  count=0
+  for ( i in 1: n ){
+    if ( v[i]==0){
+      count=count+1
+    }
+  }
+  return(count)
+}
+countZeros(matrix(c(4,0,0,0,0,0,-4,0,5,0),ncol=1))
