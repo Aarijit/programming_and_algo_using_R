@@ -181,3 +181,95 @@ polyEvalHornerMultiple(c(1,-3,3,-1),0.99999,1.00001,200)
 
 
 ```{r}
+
+
+
+## SOLUTIONS ##
+
+## PROBLEM 1 :  Write a program that calculates the inner product of two given vectors v and w ∈ R n using a loop. Test your program for various small vectors. Then, use your program and measure the processing time for vectors of different sizes ##
+
+## SOLUTION ##
+
+innerProduct<-function(c, w ){
+  sumProduct=0
+  n=length(c)
+  i=1
+  while( i<=n ){
+    sumProduct = sumProduct+c[i]*w[i]
+    i = i +1
+  }
+  return(sumProduct)
+  
+} 
+system.time(innerProduct(matrix(1,nrow=10000),matrix(1,nrow=10000)))
+system.time(innerProduct(matrix(1,nrow=40000),matrix(1,nrow=40000)))
+system.time(innerProduct(matrix(1,nrow=160000),matrix(1,nrow=160000)))
+system.time(innerProduct(matrix(1,nrow=640000),matrix(1,nrow=640000)))
+
+
+
+## PROBLEM 2 : Using your time measurement for n = 640, 000 in Question 1, estimate how many floating-point operations can be performed per second, assuming that a summation and multiplication is one floating-point operation. This will give a rough idea on how powerful the computer that you employ your program on. ##
+
+## SOLUTION: CAN'T SOLVE THIS PROBLEM ##
+
+
+
+## PROBLEM 3 : Write a program that multiplies a matrix A ∈ R m×n with a vector x ∈ R n . Test your program for various small matrices and vectors. Then, use your program and measure the processing time for matrices and vectors of different sizes ##
+
+## SOLUTION ##
+
+matrixMultiplication<-function(A,x){
+  m=nrow(A)
+  n=ncol(A)
+  
+  y=matrix(0,nrow = m)
+  for(i in 1:m){
+    for(j in 1:n){
+      y[i]=y[i]+A[i,j]*x[j]
+    }
+  }
+  return(y)
+}
+
+system.time(matrixMultiplication(matrix(1,nrow=100,ncol=100),matrix(1,nrow=100)))
+system.time(matrixMultiplication(matrix(1,nrow=200,ncol=200),matrix(1,nrow=200)))
+system.time(matrixMultiplication(matrix(1,nrow=400,ncol=400),matrix(1,nrow=400)))
+system.time(matrixMultiplication(matrix(1,nrow=800,ncol=800),matrix(1,nrow=800)))
+
+
+## PROBLEM 4 : Write a program that multiplies two matrices A ∈ R m×n and B ∈ R n×p . Test your program for various small matrices. Then, use your program and measure the processing time for 50 × 50 and 100 × 100 matrices ##
+
+## SOLUTION ##
+
+matMatMult<-function(A,B){
+  m = nrow(A)
+  n = ncol(A)
+  p = ncol(B)
+  C = matrix(0,nrow=m,ncol=p)
+  for (i in 1:m){
+    for (j in 1:p){
+      sumvalue = 0
+      for (k in 1:n){
+        sumvalue = sumvalue + A[i,k]*B[k,j]
+      }
+      C[i,j] = sumvalue
+    }
+  }
+  return(C)
+}
+
+A=matrix(1,nrow=50,ncol=50)
+B=matrix(1,nrow=50,ncol=50)
+system.time(matMatMult(A,B))
+
+A=matrix(1,nrow=100,ncol=100)
+B=matrix(1,nrow=100,ncol=100)
+system.time(matMatMult(A,B))
+
+## COULD NOT DO 5, 6 , 7 AND 8 ##
+
+
+      
+    }
+  }
+}
