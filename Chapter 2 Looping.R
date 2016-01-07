@@ -295,3 +295,31 @@ countZeros<-function(v){
   return(count)
 }
 countZeros(matrix(c(4,0,0,0,0,0,-4,0,5,0),ncol=1))
+
+
+## EXERCISE 6 ##
+
+## Write a program that finds the smallest element of a given vector v ∈ R n .##
+
+## SOLUTION ##
+
+smallestElement<-function(v){
+  smallest=0
+  n=length(v)
+  for ( i in 1 : n){
+    if ( v[i+1]<v[i]){
+      smallest=v[i+1]
+    }
+    else{
+      smallest=v[i]
+    }
+  }
+  return(smallest)
+}
+smallestElement(matrix(c(4,0,3,0,0,3,-4,0,5,0),ncol=1))
+ 
+
+## MISSED QUESTION 6, 7 and 8 ##
+
+
+
